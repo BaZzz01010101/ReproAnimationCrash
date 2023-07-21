@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="ReproAnimationCrash.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ReproAnimationCrash"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:ReproAnimationCrash"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <CheckBox HorizontalAlignment="Center" x:Name="Checkbox" Content="Click me: ON >> OFF >> ON" IsChecked="False" />
+
+        <controls:AnimationControl
+            HorizontalAlignment="Stretch"
+            HorizontalContentAlignment="Stretch"
+            Animate="{Binding ElementName=Checkbox, Path=IsChecked}"
+            Style="{StaticResource ToggleRecordingAnimationControlStyle}">
+
+            <Border Background="Red" CornerRadius="50" Width="100" Height="100" />
+
+        </controls:AnimationControl>
+    </StackPanel>
+</Page>
